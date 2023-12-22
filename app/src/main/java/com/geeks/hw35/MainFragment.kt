@@ -1,11 +1,9 @@
 package com.geeks.hw35
 
-import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
 import android.view.ViewGroup
 import com.geeks.hw35.databinding.FragmentMainBinding
 
@@ -31,13 +29,13 @@ class MainFragment : Fragment() {
     private fun initListener() {
         binding.btCount.setOnClickListener {
             if (plusOrMinus) {
-                if (count < 10) {
+                if (count < 9) {
                     count++
                     binding.tvCounter.text = count.toString()
                 } else {
                     plusOrMinus = false
                     binding.btCount.text = "-1"
-                    count--
+                    count++
                     binding.tvCounter.text = count.toString()
                 }
             } else {
